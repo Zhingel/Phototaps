@@ -29,7 +29,22 @@
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0ev-7o-Ufk">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lr8-d5-Uby">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Lr8-d5-Uby" firstAttribute="leading" secondItem="0ev-7o-Ufk" secondAttribute="leading" id="4NG-bp-fEw"/>
+                                        <constraint firstAttribute="bottom" secondItem="Lr8-d5-Uby" secondAttribute="bottom" id="91s-He-ukg"/>
+                                        <constraint firstAttribute="trailing" secondItem="Lr8-d5-Uby" secondAttribute="trailing" id="AyG-L5-Ceq"/>
+                                        <constraint firstItem="Lr8-d5-Uby" firstAttribute="top" secondItem="0ev-7o-Ufk" secondAttribute="top" id="jH0-TR-R0F"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="imageCell" destination="Lr8-d5-Uby" id="dJW-fY-eyj"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

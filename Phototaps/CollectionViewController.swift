@@ -10,14 +10,15 @@ import UIKit
 
 
 class CollectionViewController: UICollectionViewController {
+    let photos = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
     
     let itemsPerRow: CGFloat = 2
     let sectionInserts = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         
-    
         
     }
     
@@ -27,16 +28,19 @@ class CollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 15
+        return photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         cell.backgroundColor = .yellow
-//        cell.frame.size.height = 100
-//        cell.frame.size.width = 100
-        // Configure the cell
-    
+//        cell.layer.cornerRadius = 20.0
+        
+        cell.imageCell.image = UIImage(named: photos[indexPath.item])
+        cell.imageCell.contentMode = .scaleAspectFill
+        cell.imageCell.clipsToBounds = true
+        
+       
         return cell
     }
 
@@ -93,4 +97,5 @@ class CollectionViewController: UICollectionViewController {
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
             return sectionInserts.left
         }
+        
     }
